@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @RestController
 @EnableDiscoveryClient
-public class MainConfigure {
+public class ConsumerMainConfigure {
 	
 	@Autowired
 	private RestTemplate restTemplate;
@@ -45,6 +45,6 @@ public class MainConfigure {
 		return new RestTemplate();
 	}
 	public static void main(String[] args) {
-		SpringApplication.run(MainConfigure.class, args);
+		SpringApplication.run(ConsumerMainConfigure.class, args);
 	}
 }
