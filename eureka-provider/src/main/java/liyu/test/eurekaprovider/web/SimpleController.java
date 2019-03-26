@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class SimpleController {
 	@RequestMapping("/msg")
 	public String sccess() {
-		return "success from provider.";
+		return "success from provider.1";
 	}
 }
