@@ -4,6 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
+import sun.rmi.log.LogOutputStream;
+
 
 @SpringBootApplication
 @EnableZuulProxy
@@ -14,6 +16,6 @@ public class ZuulMainConfigure {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		SpringApplication.run(ZuulMainConfigure.class, args);
+		SpringApplication.run(ZuulMainConfigure.class, args);	
 	}
 }
