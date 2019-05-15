@@ -1,0 +1,1 @@
+java -Xms1024m -Xmx2018m -jar target\Micro-Service-Skeleton-Register-2.0.0.jar --spring.profiles.active=node-2

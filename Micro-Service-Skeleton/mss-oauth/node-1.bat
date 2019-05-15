@@ -1,0 +1,1 @@
+java -jar target\Micro-Service-Skeleton-Auth-2.0.0.jar

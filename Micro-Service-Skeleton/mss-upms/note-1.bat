@@ -1,0 +1,1 @@
+java -jar target\microservice.skeleton.upms-2.0.0.jar
