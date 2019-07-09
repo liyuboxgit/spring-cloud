@@ -11,7 +11,7 @@ public class SimpleController {
 	
 	@RequestMapping("/trace2")
 	public String sccess() {
-		logger.info("===<call trace-2>===");
+		//logger.info("===<call trace-2>===");
 		return "success from trace2.";
 	}
 }

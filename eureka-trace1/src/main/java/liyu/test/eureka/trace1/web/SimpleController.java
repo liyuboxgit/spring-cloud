@@ -24,7 +24,7 @@ public class SimpleController {
 	
 	@RequestMapping("/trace1")
 	public String sccess() {
-		logger.info("===<call trace-1>===");
+		//logger.info("===<call trace-1>===");
 		List<ServiceInstance> list = this.discoveryClient.getInstances("eureka-trace2");
 		if(list.size()!=0 && list.get(0)!=null){
 			URI uri = list.get(0).getUri();
