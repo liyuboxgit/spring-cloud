@@ -1,12 +1,15 @@
 package liyu.test.eurekaconsumer;
 
 import java.net.URI;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
@@ -18,9 +21,9 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @RestController
-//@EnableDiscoveryClient
 @EnableEurekaClient
 @EnableFeignClients
+@EnableCircuitBreaker
 public class ConsumerMainConfigure {
 	
 	@Autowired
@@ -44,14 +47,25 @@ public class ConsumerMainConfigure {
 		
 	}
 	
-	@RequestMapping("/2")
-	public String sccess2() {
+	@RequestMapping("/1")
+	public String sccess1() {
 		return hiService.msg();
 	}
 	
+	@RequestMapping("/2")
+	public String sccess2() {
+		return hiService.msg2(new java.util.Date().getTime());
+	}
+	
+	@RequestMapping("/3")
+	public String sccess3() {
+		Map<String,String> p = new HashMap<String,String>();
+		p.put("id","180");
+		return hiService.msg3(p);
+	}
 	
 	@Bean
-	public RestTemplate restTemplate(){
+	public RestTemplate getRestTemplate() {
 		return new RestTemplate();
 	}
 	/**
