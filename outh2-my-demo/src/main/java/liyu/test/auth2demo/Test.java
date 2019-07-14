@@ -75,30 +75,65 @@ public class Test {
 		}
 	}
 	
+	//db:outh2demo
+	//scema:
+		/*CREATE TABLE `oauth_client_details` (
+			  `client_id` varchar(48) NOT NULL,
+			  `resource_ids` varchar(256) DEFAULT NULL,
+			  `client_secret` varchar(256) DEFAULT NULL,
+			  `scope` varchar(256) DEFAULT NULL,
+			  `authorized_grant_types` varchar(256) DEFAULT NULL,
+			  `web_server_redirect_uri` varchar(256) DEFAULT NULL,
+			  `authorities` varchar(256) DEFAULT NULL,
+			  `access_token_validity` int(11) DEFAULT NULL,
+			  `refresh_token_validity` int(11) DEFAULT NULL,
+			  `additional_information` varchar(4096) DEFAULT NULL,
+			  `autoapprove` varchar(256) DEFAULT NULL,
+			  PRIMARY KEY (`client_id`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8*/
+		/*CREATE TABLE `sys_user` (
+			  `id` int(11) NOT NULL AUTO_INCREMENT,
+			  `avatar` varchar(255) DEFAULT NULL,
+			  `username` varchar(45) DEFAULT NULL,
+			  `password` varchar(96) DEFAULT NULL,
+			  `salt` varchar(45) DEFAULT NULL,
+			  `name` varchar(45) DEFAULT NULL,
+			  `birthday` datetime DEFAULT NULL,
+			  `sex` int(11) DEFAULT NULL,
+			  `email` varchar(45) DEFAULT NULL,
+			  `phone` varchar(45) DEFAULT NULL,
+			  `status` int(11) DEFAULT NULL,
+			  `create_time` datetime DEFAULT NULL,
+			  `update_time` datetime DEFAULT NULL,
+			  PRIMARY KEY (`id`),
+			  UNIQUE KEY `unique_user_username` (`username`)
+			) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8*/
+	//data:
+		//insert into oauth_client_details (client_id,client_secret,scope,authorized_grant_types) values('test','test','test','authorization_code,password,refresh_token,client_credentials');
+		//insert into sys_user (username,password) values('admin','admin');
 	public static void main(String[] args) {
 		/*Map<String, Object> param = new EnhanrenceMap().init()
-			.set("username", "user_1")
-			.set("password","123456")
-			.set("grant_type","password")
-			.set("scope","select")
-			.set("client_id","client_2")
-			.set("client_secret","123456")
-			.get();*/
+				.set("grant_type","client_credentials")
+				.set("scope","test")
+				.set("client_id","test")
+				.set("client_secret","test")
+				.get();*/
 		
 		Map<String, Object> param = new EnhanrenceMap().init()
-				.set("grant_type","client_credentials")
-				.set("scope","select")
-				.set("client_id","client_1")
-				.set("client_secret","123456")
+				.set("grant_type","password")
+				.set("scope","test")
+				.set("client_id","test")
+				.set("client_secret","test")
+				.set("username", "admin")
+				.set("password", "admin")
 				.get();
 		
 		HashMap<String,String> map = new HashMap<String,String>();
 		param.forEach((k,v) -> {
 			map.put(k, (String) v);
 		});
-		System.out.println(map);
 		String ret = doPost("http://localhost:8080/oauth/token", map);
-		
+		System.out.println(map);		
 		System.out.println(ret);
 	}
 

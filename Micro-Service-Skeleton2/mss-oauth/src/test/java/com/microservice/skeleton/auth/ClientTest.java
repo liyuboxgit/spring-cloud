@@ -18,7 +18,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 public class ClientTest {
-	public static int CONNECT_TIMEOUT = 12000;
+	public static int CONNECT_TIMEOUT = 60000;
 	public static String doPost(String url, Map<String, String> params) {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		try {
@@ -60,10 +60,18 @@ public class ClientTest {
 	
 	public static void main(String[] args) {
 		Map<String, String> param = new HashMap<String, String>();
-		param.put("grant_type", "client_credentials");
+		
+		/*param.put("grant_type", "client_credentials");
 		param.put("client_id", "webApp");
+		param.put("client_secret", "123456");
+		param.put("scope", "app");*/
+		
+		param.put("grant_type", "password");
 		param.put("username", "admin");
-		param.put("password", "admin");
+		param.put("password", "123456");
+		param.put("scope", "app");
+		param.put("client_id", "webApp");
+		param.put("client_secret","123456");
 		
 		String post = doPost("http://localhost:9030/uaa/oauth/token",param);
 		System.out.println("==>"+post);
