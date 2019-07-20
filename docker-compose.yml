@@ -1,0 +1,16 @@
+version: '2'
+services:
+  eureka-server:
+    image: liyu/eureka-server:0.0.1-SNAPSHOT
+    ports:
+      - "8762:8762"
+  
+  eureka-provider:
+    image: liyu/eureka-provider:0.0.1-SNAPSHOT
+    links:
+      - eureka-server:liyu
+      
+  eureka-consumer:
+    image: liyu/eureka-consumer:0.0.1-SNAPSHOT
+    links:
+      - eureka-server:liyu
