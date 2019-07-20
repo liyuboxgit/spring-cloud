@@ -64,7 +64,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.4.12</version>
                 <configuration>
-                    <imageName>eureka-server:0.0.1</imageName>
+                    <imageName>liyu/${project.artifactId}:${project.version}</imageName>
                     <baseImage>tomcat</baseImage>
                     <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
                     <resources>
@@ -77,6 +77,5 @@
                 </configuration>
             </plugin>
         </plugins>
-	<finalName>eureka-server</finalName>
     </build>
 </project>
