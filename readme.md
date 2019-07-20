@@ -15,7 +15,5 @@ git checkout -b branch_name tag_name
 这样会从 tag 创建一个分支，然后就和普通的 git 操作一样了。
 
 
-http://localhost:9030/uaa/oauth/token?username=webApp&password=123456&grant_type=client_credentials
-http://localhost:9030/uaa/oauth/token?grant_type=password&username=admin&password=123456
-
-http://localhost:9030/uaa/user?access_token=md
+docker
+	以eureka-server，eureke-provicd，eureka-consumer构建微服务
