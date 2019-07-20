@@ -17,3 +17,5 @@ git checkout -b branch_name tag_name
 
 docker
 	以eureka-server，eureke-provicd，eureka-consumer构建微服务
+	docker-compose up
+	docker-compose scale eureka-provider=3

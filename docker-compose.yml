@@ -12,5 +12,7 @@ services:
       
   eureka-consumer:
     image: liyu/eureka-consumer:0.0.1-SNAPSHOT
+    ports:
+      - "10002:10002"
     links:
       - eureka-server:liyu
