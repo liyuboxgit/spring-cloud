@@ -37,7 +37,7 @@ public class OAuth2ServerConfig {
             // @formatter:off
             http
             	.authorizeRequests()
-                .antMatchers("/product/**").access("#oauth2.hasScope('test') and hasRole('USER')")
+                .antMatchers("/product/**").access("#oauth2.hasScope('test') and hasRole('ROLE_USER')")
                 .antMatchers("/order/**").authenticated();
             // @formatter:on
         }

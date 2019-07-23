@@ -40,7 +40,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 					String un = (String) map.get("username");
 					String up = (String) map.get("password");
 					Set<GrantedAuthority> grantedAuthorities = new HashSet<GrantedAuthority>();
-					grantedAuthorities.add(new SimpleGrantedAuthority("USER"));
+					grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_USER"));
 					User user = new User(un, up, grantedAuthorities);
 					return user;
 				}
