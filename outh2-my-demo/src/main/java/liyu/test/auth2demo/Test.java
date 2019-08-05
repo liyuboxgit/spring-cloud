@@ -132,7 +132,7 @@ public class Test {
 		param.forEach((k,v) -> {
 			map.put(k, (String) v);
 		});
-		String ret = doPost("http://localhost:8080/oauth/token", map);
+		String ret = doPost("http://localhost/oauth/token", map);
 		System.out.println(map);		
 		System.out.println(ret);
 	}
