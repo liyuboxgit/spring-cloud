@@ -11,6 +11,8 @@ public class PostTest {
 	public static void main(String[] args) {
 		String post = sendPost("http://localhost:9000/encrypt", "123456");
 		System.out.println(post);
+		String post2 = sendPost("http://localhost:9000/decrypt", "93400afe30d9061583135ac3b95d0de62c9f09bac92d7f9f862dcd9f953f6e94");
+		System.out.println(post2);
 	}
 	
 	public static String sendPost(String url, String param) {
